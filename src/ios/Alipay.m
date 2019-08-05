@@ -16,8 +16,8 @@
     NSString* orderString = [command.arguments objectAtIndex:0];
 
     if (!orderString) {
-        [self.commandDelegate sendPluginResult:[CDVPluginResult initWithStatus:CDVCommandStatus_ERROR message:orderString] 
-            callbackId:self.callbackId];
+        [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:orderString] 
+         callbackId:self.callbackId];
     }
 
     NSString* appScheme = [NSString stringWithFormat:@"ali%@", self.appId];

@@ -11,8 +11,8 @@
     <repo>https://github.com/jing-zhou/cordova-plugin-alipay</repo>
     <issue>https://github.com/jing-zhou/cordova-plugin-alipay/issues</issue>
     
-    <js-module name="alipay" src="www/alipay.js">
-      <clobbers target="cordova.plugins.alipay" />
+    <js-module name="Alipay" src="www/alipay.js">
+      <clobbers target="cordova.plugins.ali"/>
     </js-module>
 
     <preference name="APP_ID"/>
@@ -22,6 +22,7 @@
       <config-file target="res/xml/config.xml" parent="/*">
           <feature name="Alipay">
               <param name="android-package" value="org.apache.cordova.ali.Alipay"/>
+              <param name="onload" value="true" />
           </feature>
       </config-file>
       
@@ -39,7 +40,7 @@
           </activity>
       </config-file>
       
-      <config-file target="AndroidManifest.xml" parent="/*">
+      <config-file target="AndroidManifest.xml" parent="/manifest">
           <uses-permission android:name="android.permission.INTERNET" />
           <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
           <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -73,5 +74,6 @@
         <framework src="src/ios/lib/AlipaySDK.framework" custom="true"/>
         <resource-file src="src/ios/lib/AlipaySDK.bundle"/>
         <source-file src="src/ios/Alipay.m"/>
+        <source-file src="src/ios/Alipay.h"/>
     </platform>
 </plugin>
